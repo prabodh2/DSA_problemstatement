@@ -27,7 +27,6 @@ public:
             current = next;
         }
     }
-
     // Function to add a book to the catalog
     void addBook() {
         string title, author;
@@ -77,7 +76,6 @@ public:
             cout << "Book not found.\n";
         }
     }
-
     // Function to search for a book by author
     void searchByAuthor() {
         string author;
