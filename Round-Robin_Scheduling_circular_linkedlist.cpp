@@ -100,7 +100,6 @@ int main() {
         cin >> totalTasks;
         scheduling.addUser("User " +    to_string(i + 1), totalTasks);
     }
-
     // Perform round-robin scheduling
     cout << "\nRound-Robin Scheduling:\n";
     for (int i = 0; i < timeQuantum; ++i) {
