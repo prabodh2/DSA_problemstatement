@@ -4,13 +4,11 @@ using namespace std;
 
 // Maximum number of products
 const int MAX_PRODUCTS = 100;
-
 // Structure to represent a product
 struct Product {
     string name;
     int quantity;
 };
-
 // Inventory management class
 class InventoryManager {
 private:
