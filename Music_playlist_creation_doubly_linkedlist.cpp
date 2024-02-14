@@ -9,12 +9,10 @@ struct Song {
     std::string genre;
     Song* prev;
     Song* next;
-
     // Constructor
     Song(std::string _title, std::string _producer, std::string _singer, std::string _genre)
         : title(_title), producer(_producer), singer(_singer), genre(_genre), prev(nullptr), next(nullptr) {}
 };
-
 // Playlist class
 class Playlist {
 private:
