@@ -14,11 +14,9 @@ class InventoryManager {
 private:
     Product products[MAX_PRODUCTS];
     int numProducts;
-
 public:
     // Constructor
     InventoryManager() : numProducts(0) {}
-
     // Function to add a product
     void addProduct() {
         if (numProducts < MAX_PRODUCTS) {
@@ -28,7 +26,6 @@ public:
             cin >> name;
             cout << "Enter quantity: ";
             cin >> quantity;
-
             products[numProducts].name = name;
             products[numProducts].quantity = quantity;
             numProducts++;
