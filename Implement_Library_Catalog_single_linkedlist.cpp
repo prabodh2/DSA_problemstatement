@@ -11,7 +11,6 @@ struct Book {
     // Constructor
     Book(string _title, string _author, int _year) : title(_title), author(_author), year(_year), next(nullptr) {}
 };
-
 // Library catalog class
 class LibraryCatalog {
 private:
