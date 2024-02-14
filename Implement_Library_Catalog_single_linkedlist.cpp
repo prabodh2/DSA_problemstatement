@@ -15,11 +15,9 @@ struct Book {
 class LibraryCatalog {
 private:
     Book* head;
-
 public:
     // Constructor
     LibraryCatalog() : head(nullptr) {}
-
     // Destructor to free memory
     ~LibraryCatalog() {
         Book* current = head;
