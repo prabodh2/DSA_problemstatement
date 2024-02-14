@@ -18,7 +18,6 @@ class Playlist {
 private:
     Song* head;
     Song* tail;
-
 public:
     // Constructor
     Playlist() : head(nullptr), tail(nullptr) {}
@@ -32,7 +31,6 @@ public:
             delete temp;
         }
     }
-
     // Function to add a song to the playlist
     void addSong(std::string title, std::string producer, std::string singer, std::string genre) {
         Song* newSong = new Song(title, producer, singer, genre);
