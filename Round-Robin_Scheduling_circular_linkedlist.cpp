@@ -11,13 +11,11 @@ struct User {
     // Constructor
     User(std::string _name, int tasks) : name(_name), printTasks(tasks), next(nullptr) {}
 };
-
 // Round-Robin scheduling class
 class RoundRobinScheduling {
 private:
     User* head;
     int totalTimeQuantum; // Total time quantum for each user
-
 public:
     // Constructor
     RoundRobinScheduling(int timeQuantum) : head(nullptr), totalTimeQuantum(timeQuantum) {}
