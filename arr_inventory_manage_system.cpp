@@ -72,12 +72,10 @@ public:
         }
     }
 };
-
 int main() {
     InventoryManager manager;
     int choice;
     int threshold;
-
     do {
         cout << "\nMenu:\n";
         cout << "1. Add product\n";
@@ -87,7 +85,6 @@ int main() {
         cout << "5. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
-
         switch (choice) {
             case 1:
                 manager.addProduct();
