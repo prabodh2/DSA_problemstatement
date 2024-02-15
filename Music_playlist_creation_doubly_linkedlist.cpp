@@ -3,10 +3,10 @@
 
 // Node structure to represent a song
 struct Song {
-    std::string title;
-    std::string producer;
-    std::string singer;
-    std::string genre;
+  string title;
+  string producer;
+ string singer;
+   string genre;
     Song* prev;
     Song* next;
     // Constructor
