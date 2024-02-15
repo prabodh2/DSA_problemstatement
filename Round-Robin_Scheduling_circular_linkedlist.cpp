@@ -17,7 +17,6 @@ private:
 public:
     // Constructor
     RoundRobinScheduling(int timeQuantum) : head(nullptr), totalTimeQuantum(timeQuantum) {}
-
     // Destructor to free memory
     ~RoundRobinScheduling() {
         if (head != nullptr) {
@@ -42,7 +41,6 @@ public:
             head->next = newUser;
         }
     }
-
     // Function to perform round-robin scheduling
     void performScheduling() {
         if (head == nullptr) {
