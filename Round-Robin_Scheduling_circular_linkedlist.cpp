@@ -1,13 +1,11 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
 // Node structure to represent a user
 struct User {
     string name;
     int printTasks;
     User* next;
-
     // Constructor
     User(std::string _name, int tasks) : name(_name), printTasks(tasks), next(nullptr) {}
 };
