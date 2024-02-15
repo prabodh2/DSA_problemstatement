@@ -7,7 +7,6 @@ struct Book {
     string author;
     int year;
     Book* next;
-
     // Constructor
     Book(string _title, string _author, int _year) : title(_title), author(_author), year(_year), next(nullptr) {}
 };
