@@ -14,6 +14,7 @@ struct Book {
 class LibraryCatalog {
 private:
     Book* head;
+
 public:
     // Constructor
     LibraryCatalog() : head(nullptr) {}
