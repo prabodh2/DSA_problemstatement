@@ -47,7 +47,6 @@ public:
             cout << "No users in the scheduling.\n";
             return;
         }
-
         User* current = head;
         while (current->next != head) {
             if (current->printTasks > 0) {
@@ -56,7 +55,6 @@ public:
             }
             current = current->next;
         }
-
         // Last user
         if (current->printTasks > 0) {
             cout << "Printing task for user: " << current->name <<   endl;
