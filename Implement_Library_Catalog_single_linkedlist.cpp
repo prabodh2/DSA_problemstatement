@@ -82,7 +82,6 @@ void removeBook(Book*& head, string title) {
     while (currentBook->next_book && currentBook->next_book->title != title) {
         currentBook = currentBook->next_book;
     }
-
     if (currentBook->next_book) {
         Book* temp = currentBook->next_book;
         currentBook->next_book = currentBook->next_book->next_book;
@@ -92,7 +91,6 @@ void removeBook(Book*& head, string title) {
         cout << "Book not found in the library." << endl;
     }
 }
-
 void searchByTitle(Book* head, string title) {
     Book* currentBook = head;
     while (currentBook) {
