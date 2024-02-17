@@ -159,10 +159,8 @@ void updateQuantity(Product inventory[], int numProducts) {
     int productId;
     int quantity;
     char task;
-
     cout << "Enter Product ID: ";
     cin >> productId;
-
     for (int i = 0; i < numProducts; ++i) {
         if (inventory[i].product_id == productId) {
             cout << "Do you want to perform addition (+) or deletion (-)? ";
@@ -190,7 +188,6 @@ void updateQuantity(Product inventory[], int numProducts) {
 
     cout << "Product not found in the inventory (ID: " << productId << ")." << endl;
 }
-
 void deleteProduct(Product*& inventory, int& numProducts, int productId) {
     for (int i = 0; i < numProducts; ++i) {
         if (inventory[i].product_id == productId) {
@@ -198,25 +195,19 @@ void deleteProduct(Product*& inventory, int& numProducts, int productId) {
             for (int j = i; j < numProducts - 1; ++j) {
                 inventory[j] = inventory[j + 1];
             }
-
             // Decrease the number of products
             numProducts--;
-
             // Resize the array
             inventory = (Product*)realloc(inventory, numProducts * sizeof(Product));
-
             cout << "Product deleted from the inventory (ID: " << productId << ")." << endl;
             return;
         }
     }
-
     cout << "Product not found in the inventory (ID: " << productId << ")." << endl;
 }
-
 void checkLowStock(const Product inventory[], int numProducts, int lowStockThreshold) {
     cout << "Low Stock Alert:" << endl;
     cout << "-----------------" << endl;
-
     for (int i = 0; i < numProducts; ++i) {
         if (inventory[i].quantity < lowStockThreshold) {
             cout << "Product ID: " << inventory[i].product_id << ", Name: " << inventory[i].name<< " is running low on stock. Current Quantity: " << inventory[i].quantity << endl;
