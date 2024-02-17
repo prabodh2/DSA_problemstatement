@@ -8,7 +8,6 @@ struct Book {
     string author;
     int numberOfCopies;
     Book* next_book;
-
     Book(string t, string a, int copies) : title(t), author(a), numberOfCopies(copies), next_book(nullptr) {}
 };
 void addBook(Book*& head, string title, string author, int copies) {
@@ -21,10 +20,8 @@ void addBook(Book*& head, string title, string author, int copies) {
         }//book exists. so adding new copies to the library.
         currentBook = currentBook->next_book;
     }
-
     //adds new book.
     Book* newBook = new Book(title, author, copies);
-
     if (!head) {
         head = newBook;
     } else {
@@ -34,7 +31,6 @@ void addBook(Book*& head, string title, string author, int copies) {
         }
         currentBook->next_book = newBook;
     }
-
     cout << "Book added successfully." << endl;
 }
 
