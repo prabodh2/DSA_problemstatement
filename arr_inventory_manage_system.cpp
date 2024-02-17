@@ -284,6 +284,5 @@ int main() {
 
     // Cleanup: Free allocated memory
     free(inventory);
-
     return 0;
 }
