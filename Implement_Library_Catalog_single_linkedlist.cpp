@@ -11,10 +11,8 @@ struct Book {
 
     Book(string t, string a, int copies) : title(t), author(a), numberOfCopies(copies), next_book(nullptr) {}
 };
-
 void addBook(Book*& head, string title, string author, int copies) {
     Book* currentBook = head;
-    
     while (currentBook) {
         if (currentBook->title == title) {
             currentBook->numberOfCopies += copies;
