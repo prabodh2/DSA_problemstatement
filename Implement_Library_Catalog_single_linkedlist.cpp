@@ -1,150 +1,184 @@
 #include <iostream>
 #include <string>
+
 using namespace std;
-// Node structure to represent a book
+
 struct Book {
     string title;
     string author;
-    int year;
-    Book* next;
-    // Constructor
-    Book(string _title, string _author, int _year) : title(_title), author(_author), year(_year), next(nullptr) {}
+    int numberOfCopies;
+    Book* next_book;
+
+    Book(string t, string a, int copies) : title(t), author(a), numberOfCopies(copies), next_book(nullptr) {}
 };
-// Library catalog class
-class LibraryCatalog {
-private:
-    Book* head;
 
-public:
-    // Constructor
-    LibraryCatalog() : head(nullptr) {}
-    // Destructor to free memory
-    ~LibraryCatalog() {
-        Book* current = head;
-        while (current != nullptr) {
-            Book* next = current->next;
-            delete current;
-            current = next;
-        }
+void addBook(Book*& head, string title, string author, int copies) {
+    Book* currentBook = head;
+    
+    while (currentBook) {
+        if (currentBook->title == title) {
+            currentBook->numberOfCopies += copies;
+            cout << "Book already exists. Added " << copies << " copies to the existing number of copies." << endl;
+            return;
+        }//book exists. so adding new copies to the library.
+        currentBook = currentBook->next_book;
     }
-    // Function to add a book to the catalog
-    void addBook() {
-        string title, author;
-        int year;
-        cout << "Enter book title: ";
-        cin.ignore();
-        getline(cin, title);
-        cout << "Enter author name: ";
-        getline(cin, author);
-        cout << "Enter publication year: ";
-        cin >> year;
 
-        Book* newBook = new Book(title, author, year);
-        if (head == nullptr) {
-            head = newBook;
-        } else {
-            Book* current = head;
-            while (current->next != nullptr) {
-                current = current->next;
+    //adds new book.
+    Book* newBook = new Book(title, author, copies);
+
+    if (!head) {
+        head = newBook;
+    } else {
+        currentBook = head;
+        while (currentBook->next_book) {
+            currentBook = currentBook->next_book;
+        }
+        currentBook->next_book = newBook;
+    }
+
+    cout << "Book added successfully." << endl;
+}
+
+void borrowBook(Book*& head) {
+    string title;
+    int copiesWanted;
+
+    cout << "Enter the title of the book you want to borrow: ";
+    cin.ignore();
+    getline(cin, title);
+
+    Book* currentBook = head;
+
+    while (currentBook) {
+        if (currentBook->title == title) {
+            cout << "Enter the number of copies you want to borrow: ";
+            cin >> copiesWanted;
+
+            if (copiesWanted <= currentBook->numberOfCopies && copiesWanted > 0) {
+                currentBook->numberOfCopies -= copiesWanted;
+                cout << "Book borrowed successfully. Number of copies remaining: " << currentBook->numberOfCopies << endl;
+            } else {
+                cout << "Invalid number of copies. Please enter a valid number." << endl;
             }
-            current->next = newBook;
+
+            return;
         }
-        cout << "Book added successfully.\n";
+        currentBook = currentBook->next_book;
     }
 
-    // Function to search for a book by title
-    void searchByTitle() {
-        string title;
-        cout << "Enter title to search: ";
-        cin.ignore();
-        getline(cin, title);
+    cout << "Book not found in the library." << endl;
+}
 
-        Book* current = head;
-        bool found = false;
-        while (current != nullptr) {
-            if (current->title == title) {
-                cout << "Book found:\n";
-                cout << "Title: " << current->title << "\n";
-                cout << "Author: " << current->author << "\n";
-                cout << "Year: " << current->year << "\n";
-                found = true;
-                break;
-            }
-            current = current->next;
-        }
-        if (!found) {
-            cout << "Book not found.\n";
-        }
-    }
-    // Function to search for a book by author
-    void searchByAuthor() {
-        string author;
-        cout << "Enter author name to search: ";
-        cin.ignore();
-        getline(cin, author);
-
-        Book* current = head;
-        bool found = false;
-        while (current != nullptr) {
-            if (current->author == author) {
-                cout << "Book found:\n";
-                cout << "Title: " << current->title << "\n";
-                cout << "Author: " << current->author << "\n";
-                cout << "Year: " << current->year << "\n";
-                found = true;
-            }
-            current = current->next;
-        }
-        if (!found) {
-            cout << "No books found by this author.\n";
-        }
+void removeBook(Book*& head, string title) {
+    if (!head) {
+        cout << "Library is empty. Cannot remove book." << endl;
+        return;
     }
 
-    // Function to display all books in the catalog
-    void displayCatalog() {
-        Book* current = head;
-        cout << "Library Catalog:\n";
-        while (current != nullptr) {
-            cout << "Title: " << current->title << ", Author: " << current->author << ", Year: " << current->year << "\n";
-            current = current->next;
-        }
+    if (head->title == title) {
+        Book* temp = head;
+        head = head->next_book;
+        delete temp;
+        cout << "Book removed successfully." << endl;
+        return;
     }
-};
+
+    Book* currentBook = head;
+    while (currentBook->next_book && currentBook->next_book->title != title) {
+        currentBook = currentBook->next_book;
+    }
+
+    if (currentBook->next_book) {
+        Book* temp = currentBook->next_book;
+        currentBook->next_book = currentBook->next_book->next_book;
+        delete temp;
+        cout << "Book removed successfully." << endl;
+    } else {
+        cout << "Book not found in the library." << endl;
+    }
+}
+
+void searchByTitle(Book* head, string title) {
+    Book* currentBook = head;
+    while (currentBook) {
+        if (currentBook->title == title) {
+            cout << "Book found: " << currentBook->title << " by " << currentBook->author << ", Copies: " << currentBook->numberOfCopies << endl;
+            return;
+        }
+        currentBook = currentBook->next_book;
+    }
+    cout << "Book not found in the library." << endl;
+}
+
+void displayAllBooks(Book* head) {
+    Book* currentBook = head;
+    while (currentBook) {
+        cout << "Title: " << currentBook->title << ", Author: " << currentBook->author << ", Copies: " << currentBook->numberOfCopies << endl;
+        currentBook = currentBook->next_book;
+    }
+}
 
 int main() {
-    LibraryCatalog catalog;
+    Book* library = nullptr;
     int choice;
 
     do {
-        cout << "\nMenu:\n";
-        cout << "1. Add a book\n";
-        cout << "2. Search by title\n";
-        cout << "3. Search by author\n";
-        cout << "4. Display catalog\n";
-        cout << "5. Exit\n";
+        cout << "Menu:" << endl;
+        cout << "1. Add Book" << endl;
+        cout << "2. Remove Book" << endl;
+        cout << "3. Search by Title" << endl;
+        cout << "4. Display All Books" << endl;
+        cout << "5. Borrow Book" << endl;
+        cout << "6. Exit" << endl;
+
+
         cout << "Enter your choice: ";
         cin >> choice;
 
         switch (choice) {
-            case 1:
-                catalog.addBook();
+            case 1: {
+                string title, author;
+                int copies;
+                cout << "Enter book title: ";
+                cin.ignore();
+                getline(cin, title);
+                cout << "Enter author name: ";
+                getline(cin, author);
+                cout << "Enter number of copies: ";
+                cin >> copies;
+                addBook(library, title, author, copies);
                 break;
-            case 2:
-                catalog.searchByTitle();
+            }
+            case 2: {
+                string title;
+                cout << "Enter the title of the book to remove: ";
+                cin.ignore();
+                getline(cin, title);
+                removeBook(library, title);
                 break;
-            case 3:
-                catalog.searchByAuthor();
+            }
+            case 3: {
+                string title;
+                cout << "Enter the title of the book to search: ";
+                cin.ignore();
+                getline(cin, title);
+                searchByTitle(library, title);
                 break;
+            }
             case 4:
-                catalog.displayCatalog();
+                displayAllBooks(library);
                 break;
             case 5:
-                cout << "Exiting program.\n";
+                borrowBook(library);
+                break;
+            case 6:
+                cout << "Exiting the program." << endl;
                 break;
             default:
-                cout << "Invalid choice. Please try again.\n";
+                cout << "Invalid choice. Please try again." << endl;
         }
-    } while (choice != 5);
+    } while (choice != 6);
 
     return 0;
 }
