@@ -41,7 +41,6 @@ public:
             tail = newSong;
         }
     }
-
     // Function to display all songs in the playlist
     void displayPlaylist() {
         Song* current = head;
@@ -52,7 +51,6 @@ public:
             current = current->next;
         }
     }
-
     // Function to display songs by a specific producer
     void displayByProducer(std::string producer) {
         Song* current = head;
