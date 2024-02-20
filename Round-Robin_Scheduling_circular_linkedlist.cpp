@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 using namespace std;
-// Node structure to represent a user
 struct User {
     string name;
     int printTasks;
