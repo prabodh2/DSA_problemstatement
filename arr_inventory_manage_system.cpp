@@ -14,7 +14,6 @@ private:
     Product products[MAX_PRODUCTS];
     int numProducts;
 public:
-    // Constructor
     InventoryManager() : numProducts(0) {}
     // Function to add a product
     void addProduct() {
