@@ -19,7 +19,6 @@ void addBook(Book*& head, string title, string author, int copies) {
         }//book exists. so adding new copies to the library.
         currentBook = currentBook->next_book;
     }
-    //adds new book.
     Book* newBook = new Book(title, author, copies);
     if (!head) {
         head = newBook;
