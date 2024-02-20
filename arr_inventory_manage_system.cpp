@@ -9,7 +9,6 @@ struct Product {
     string name;
     int quantity;
 };
-// Inventory management class
 class InventoryManager {
 private:
     Product products[MAX_PRODUCTS];
