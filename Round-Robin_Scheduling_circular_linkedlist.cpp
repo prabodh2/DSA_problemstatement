@@ -27,7 +27,6 @@ public:
             delete head;
         }
     }
-    // Function to add a user to the scheduling
     void addUser(std::string name, int tasks) {
         User* newUser = new User(name, tasks);
         if (head == nullptr) {
