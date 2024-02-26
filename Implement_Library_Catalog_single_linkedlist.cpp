@@ -34,7 +34,6 @@ void addBook(Book*& head, string title, string author, int copies) {
 void borrowBook(Book*& head) {
     string title;
     int copiesWanted;
-
     cout << "Enter the title of the book you want to borrow: ";
     cin.ignore();
     getline(cin, title);
@@ -50,21 +49,17 @@ void borrowBook(Book*& head) {
             } else {
                 cout << "Invalid number of copies. Please enter a valid number." << endl;
             }
-
             return;
         }
         currentBook = currentBook->next_book;
     }
-
     cout << "Book not found in the library." << endl;
 }
-
 void removeBook(Book*& head, string title) {
     if (!head) {
         cout << "Library is empty. Cannot remove book." << endl;
         return;
     }
-
     if (head->title == title) {
         Book* temp = head;
         head = head->next_book;
@@ -72,7 +67,6 @@ void removeBook(Book*& head, string title) {
         cout << "Book removed successfully." << endl;
         return;
     }
-
     Book* currentBook = head;
     while (currentBook->next_book && currentBook->next_book->title != title) {
         currentBook = currentBook->next_book;
@@ -118,8 +112,6 @@ int main() {
         cout << "4. Display All Books" << endl;
         cout << "5. Borrow Book" << endl;
         cout << "6. Exit" << endl;
-
-
         cout << "Enter your choice: ";
         cin >> choice;
 
