@@ -91,7 +91,6 @@ void searchByTitle(Book* head, string title) {
     }
     cout << "Book not found in the library." << endl;
 }
-
 void displayAllBooks(Book* head) {
     Book* currentBook = head;
     while (currentBook) {
@@ -99,7 +98,6 @@ void displayAllBooks(Book* head) {
         currentBook = currentBook->next_book;
     }
 }
-
 int main() {
     Book* library = nullptr;
     int choice;
