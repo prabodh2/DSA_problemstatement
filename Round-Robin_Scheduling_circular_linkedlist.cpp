@@ -11,7 +11,7 @@ struct User {
 class RoundRobinScheduling {
 private:
     User* head;
-    int totalTimeQuantum; // Total time quantum for each user
+    int totalTimeQuantum; 
 public:
     // Constructor
     RoundRobinScheduling(int timeQuantum) : head(nullptr), totalTimeQuantum(timeQuantum) {}
@@ -56,8 +56,6 @@ public:
             cout << "Printing task for user: " << current->name <<   endl;
             current->printTasks--;
         }
-
-        // Rotate the circle for the next iteration
         head = head->next;
     }
 };
