@@ -30,7 +30,6 @@ void addBook(Book*& head, string title, string author, int copies) {
     }
     cout << "Book added successfully." << endl;
 }
-
 void borrowBook(Book*& head) {
     string title;
     int copiesWanted;
