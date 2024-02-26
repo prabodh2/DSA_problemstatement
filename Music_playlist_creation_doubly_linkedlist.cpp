@@ -27,7 +27,6 @@ public:
             delete temp;
         }
     }
-    // Function to add a song to the playlist
     void addSong(std::string title, std::string producer, std::string singer, std::string genre) {
         Song* newSong = new Song(title, producer, singer, genre);
         if (head == nullptr) {
@@ -48,7 +47,6 @@ public:
             current = current->next;
         }
     }
-    // Function to display songs by a specific producer
     void displayByProducer(std::string producer) {
         Song* current = head;
         std::cout << "Songs by producer " << producer << ":\n";
@@ -206,7 +204,6 @@ void displayBySinger(Song* head, string singer) {
         currentSong = currentSong->next_song;
     }
 }
-
 void displayByGenre(Song* head, string genre) {
     Song* currentSong = head;
     while (currentSong) {
@@ -216,7 +213,6 @@ void displayByGenre(Song* head, string genre) {
         currentSong = currentSong->next_song;
     }
 }
-
 void displayPlaylist(Song* head) {
     Song* currentSong = head;
     while (currentSong) {
@@ -224,7 +220,6 @@ void displayPlaylist(Song* head) {
         currentSong = currentSong->next_song;
     }
 }
-
 int main() {
     Song* playlist = nullptr;
     int choice;
@@ -237,7 +232,6 @@ int main() {
         cout << "4. Display by Genre" << endl;
         cout << "5. Display Entire Playlist" << endl;
         cout << "6. Exit" << endl;
-
         cout << "Enter your choice: ";
         cin >> choice;
 
@@ -287,6 +281,5 @@ int main() {
                 cout << "Invalid choice. Please try again." << endl;
         }
     } while (choice != 6);
-
     return 0;
 }
