@@ -16,8 +16,7 @@ void addBook(Book*& head, string title, string author, int copies) {
             currentBook->numberOfCopies += copies;
             cout << "Book already exists. Added " << copies << " copies to the existing number of copies." << endl;
             return;
-        }//book exists. so adding new copies to the library.
-        currentBook = currentBook->next_book;
+        }        currentBook = currentBook->next_book;
     }
     Book* newBook = new Book(title, author, copies);
     if (!head) {
