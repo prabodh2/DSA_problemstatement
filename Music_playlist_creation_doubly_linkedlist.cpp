@@ -37,7 +37,6 @@ public:
             tail = newSong;
         }
     }
-    // Function to display all songs in the playlist
     void displayPlaylist() {
         Song* current = head;
         std::cout << "Playlist:\n";
