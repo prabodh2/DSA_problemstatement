@@ -70,7 +70,6 @@ public:
             current = current->next;
         }
     }
-
     // Function to display songs of a specific genre
     void displayByGenre(std::string genre) {
         Song* current = head;
@@ -158,7 +157,6 @@ int main() {
 #include <string>
 
 using namespace std;
-
 struct Song {
     string title;
     string producer;
@@ -169,7 +167,6 @@ struct Song {
 
     Song(string t, string p, string s, string g) : title(t), producer(p), singer(s), genre(g), next_song(nullptr), prev_song(nullptr) {}
 };
-
 void addSong(Song*& head, string title, string producer, string singer, string genre) {
     Song* newSong = new Song(title, producer, singer, genre);
 
@@ -184,7 +181,6 @@ void addSong(Song*& head, string title, string producer, string singer, string g
         newSong->prev_song = currentSong;
     }
 }
-
 void displayByProducer(Song* head, string producer) {
     Song* currentSong = head;
     while (currentSong) {
