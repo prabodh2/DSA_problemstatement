@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 
-// Node structure to represent a song
 struct Song {
   string title;
   string producer;
@@ -61,7 +60,6 @@ public:
             current = current->next;
         }
     }
-
     // Function to display songs by a specific singer
     void displayBySinger(std::string singer) {
         Song* current = head;
