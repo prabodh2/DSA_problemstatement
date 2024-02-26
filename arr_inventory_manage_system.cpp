@@ -177,7 +177,6 @@ void updateQuantity(Product inventory[], int numProducts) {
             return;
         }
     }
-
     cout << "Product not found in the inventory (ID: " << productId << ")." << endl;
 }
 void deleteProduct(Product*& inventory, int& numProducts, int productId) {
