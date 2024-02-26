@@ -31,7 +31,6 @@ public:
             cout << "Inventory full. Cannot add more products.\n";
         }
     }
-
     // Function to update quantity of a product
     void updateQuantity() {
         string name;
@@ -50,7 +49,6 @@ public:
         }
         cout << "Product not found.\n";
     }
-
     // Function to display current inventory
     void displayInventory() {
         cout << "Current Inventory:\n";
@@ -58,7 +56,6 @@ public:
             cout << products[i].name << ": " << products[i].quantity << "\n";
         }
     }
-
     // Function to alert when a product is running low on stock
     void alertLowStock(int threshold) {
         cout << "Products running low on stock:\n";
@@ -118,7 +115,6 @@ struct Product {
     string name;
     int quantity;
 };
-
 void displayInventory(const Product inventory[], int numProducts) {
     cout << "Current Inventory:" << endl;
     cout << "------------------" << endl;
@@ -129,7 +125,6 @@ void displayInventory(const Product inventory[], int numProducts) {
 
     cout << "------------------" << endl;
 }
-
 void addProduct(Product*& inventory, int& numProducts, int productId, string productName, int quantity) {
     for (int i = 0; i < numProducts; ++i) {
         if (inventory[i].product_id == productId) {
