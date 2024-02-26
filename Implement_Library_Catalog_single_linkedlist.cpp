@@ -39,9 +39,7 @@ void borrowBook(Book*& head) {
     cout << "Enter the title of the book you want to borrow: ";
     cin.ignore();
     getline(cin, title);
-
     Book* currentBook = head;
-
     while (currentBook) {
         if (currentBook->title == title) {
             cout << "Enter the number of copies you want to borrow: ";
