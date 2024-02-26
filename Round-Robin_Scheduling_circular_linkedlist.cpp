@@ -34,7 +34,6 @@ public:
             head->next = newUser;
         }
     }
-    // Function to perform round-robin scheduling
     void performScheduling() {
         if (head == nullptr) {
             cout << "No users in the scheduling.\n";
