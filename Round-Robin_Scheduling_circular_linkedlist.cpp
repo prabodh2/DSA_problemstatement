@@ -15,7 +15,6 @@ private:
 public:
     // Constructor
     RoundRobinScheduling(int timeQuantum) : head(nullptr), totalTimeQuantum(timeQuantum) {}
-    // Destructor to free memory
     ~RoundRobinScheduling() {
         if (head != nullptr) {
             User* current = head->next;
@@ -30,8 +29,7 @@ public:
     void addUser(std::string name, int tasks) {
         User* newUser = new User(name, tasks);
         if (head == nullptr) {
-            head = newUser;
-            head->next = head; // Circular reference
+            head = newUser;            head->next = head; /
         } else {
             newUser->next = head->next;
             head->next = newUser;
@@ -59,7 +57,6 @@ public:
         head = head->next;
     }
 };
-
 int main() {
     int timeQuantum;
     int numUsers;
@@ -81,7 +78,6 @@ int main() {
         cin >> tasks;
         scheduling.addUser(name, tasks);
     }
-
     int totalTasks = 0;
     for (int i = 0; i < numUsers; ++i) {
         cout << "Enter number of printing tasks for  " << i + 1 << ": ";
