@@ -213,7 +213,6 @@ void checkLowStock(const Product inventory[], int numProducts, int lowStockThres
 
     cout << "-----------------" << endl;
 }
-
 int main() {
     Product* inventory = nullptr;
     int numProducts = 0;
@@ -269,7 +268,6 @@ int main() {
                 cout << "Invalid choice. Please try again." << endl;
         }
     } while (choice != 6);
-    // Cleanup: Free allocated memory
     free(inventory);
     return 0;
 }
