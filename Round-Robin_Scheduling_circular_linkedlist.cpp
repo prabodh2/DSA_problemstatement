@@ -59,16 +59,13 @@ public:
 };
 int main() {
     int timeQuantum;
-    int numUsers;
+    int numUsers
 
     cout << "Enter time quantum for each user: ";
     cin >> timeQuantum;
-
     cout << "Enter the number of users: ";
     cin >> numUsers;
-
     RoundRobinScheduling scheduling(timeQuantum);
-
     for (int i = 0; i < numUsers; ++i) {
         string name;
         int tasks;
