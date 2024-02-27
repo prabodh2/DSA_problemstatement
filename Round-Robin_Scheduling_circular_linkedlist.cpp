@@ -12,7 +12,6 @@ private:
     User* head;
     int totalTimeQuantum; 
 public:
-    // Constructor
     RoundRobinScheduling(int timeQuantum) : head(nullptr), totalTimeQuantum(timeQuantum) {}
     ~RoundRobinScheduling() {
         if (head != nullptr) {
