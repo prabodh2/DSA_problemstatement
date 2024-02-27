@@ -132,7 +132,6 @@ int main() {
                 cin.ignore();
                 getline(cin, title);
                 removeBook(library, title);
-                break;
             }
             case 3: {
                 string title;
