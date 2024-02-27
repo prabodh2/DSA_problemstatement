@@ -202,7 +202,6 @@ void checkLowStock(const Product inventory[], int numProducts, int lowStockThres
             cout << "Product ID: " << inventory[i].product_id << ", Name: " << inventory[i].name<< " is running low on stock. Current Quantity: " << inventory[i].quantity << endl;
         }
     }
-
     cout << "-----------------" << endl;
 }
 int main() {
