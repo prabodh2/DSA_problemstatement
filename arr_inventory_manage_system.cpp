@@ -239,7 +239,6 @@ int main() {
                 break;
             case 3:
                 updateQuantity(inventory, numProducts);
-                break;
             case 4:
                 int deleteProductId;
                 cout << "Enter Product ID to delete: ";
