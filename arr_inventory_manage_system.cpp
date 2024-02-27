@@ -14,7 +14,6 @@ private:
     int numProducts;
 public:
     InventoryManager() : numProducts(0) {}
-    // Function to add a product
     void addProduct() {
         if (numProducts < MAX_PRODUCTS) {
             string name;
@@ -31,7 +30,6 @@ public:
             cout << "Inventory full. Cannot add more products.\n";
         }
     }
-    // Function to update quantity of a product
     void updateQuantity() {
         string name;
         int quantityChange;
