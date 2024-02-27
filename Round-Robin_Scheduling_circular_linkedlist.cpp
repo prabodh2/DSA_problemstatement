@@ -46,7 +46,6 @@ public:
             }
             current = current->next;
         }
-        // Last user
         if (current->printTasks > 0) {
             cout << "Printing task for user: " << current->name <<   endl;
             current->printTasks--;
@@ -57,7 +56,6 @@ public:
 int main() {
     int timeQuantum;
     int numUsers
-
     cout << "Enter time quantum for each user: ";
     cin >> timeQuantum;
     cout << "Enter the number of users: ";
