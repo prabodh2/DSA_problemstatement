@@ -58,7 +58,7 @@ void removeBook(Book*& head, string title) {
     if (!head) {
         cout << "Library is empty. Cannot remove book." << endl;
         return;
-    }
+    
     if (head->title == title) {
         Book* temp = head;
         head = head->next_book;
