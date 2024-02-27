@@ -27,7 +27,8 @@ public:
     void addUser(std::string name, int tasks) {
         User* newUser = new User(name, tasks);
         if (head == nullptr) {
-            head = newUser;            head->next = head; /
+            head = newUser;         
+            head->next = head; /
         } else {
             newUser->next = head->next;
             head->next = newUser;
