@@ -2,7 +2,6 @@
 #include <string>
 using namespace std;
 
-// Maximum number of products
 const int MAX_PRODUCTS = 100;
 struct Product {
     string name;
