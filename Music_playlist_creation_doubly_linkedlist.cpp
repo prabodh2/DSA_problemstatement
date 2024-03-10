@@ -18,7 +18,6 @@ private:
 public:
     // Constructor
     Playlist() : head(nullptr), tail(nullptr) {}
-    // Destructor to free memory
     ~Playlist() {
         Song* current = head;
         while (current != nullptr) {
