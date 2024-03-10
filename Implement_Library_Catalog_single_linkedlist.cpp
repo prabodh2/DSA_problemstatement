@@ -99,7 +99,6 @@ void displayAllBooks(Book* head) {
 int main() {
     Book* library = nullptr;
     int choice;
-
     do {
         cout << "Menu:" << endl;
         cout << "1. Add Book" << endl;
