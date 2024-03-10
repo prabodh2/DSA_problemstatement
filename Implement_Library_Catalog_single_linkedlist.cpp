@@ -111,7 +111,6 @@ int main() {
         cout << "6. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
-
         switch (choice) {
             case 1: {
                 string title, author;
