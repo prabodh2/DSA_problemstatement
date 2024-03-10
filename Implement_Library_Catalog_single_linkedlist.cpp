@@ -41,7 +41,6 @@ void borrowBook(Book*& head) {
         if (currentBook->title == title) {
             cout << "Enter the number of copies you want to borrow: ";
             cin >> copiesWanted;
-
             if (copiesWanted <= currentBook->numberOfCopies && copiesWanted > 0) {
                 currentBook->numberOfCopies -= copiesWanted;
                 cout << "Book borrowed successfully. Number of copies remaining: " << currentBook->numberOfCopies << endl;
